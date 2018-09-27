@@ -1,0 +1,212 @@
+<html>
+<head>
+	<title>Home Services Express</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/styleORD.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/order-interface.js"></script>
+    
+</head>
+	
+<body>
+<form  method="post">
+<div id="pesan" class="container">
+	<div class="header">
+		<div class="Logo" align="center">
+			<img src="img/8.png" style="width:100px;height:100px;">
+		</div>
+	</div>
+    
+    <div id="isi" class="main">
+        <div id="pop"></div>
+        <br/>
+        <h2>Contact New Service</h2>
+        <br/>
+        
+        
+        <div id="s_barber">
+            <div class="b_Hasil">
+                <span id="b_hasil">Select Worker !</span><br/>
+            </div>
+            <input type="text" id="src_worker" placeholder="Search for worker..">
+
+            <ul id="ul_barber" class="myUL">
+            </ul>
+            <br/>
+            <input id="toStyle" type="button" class="button" width="100%" value="NEXT" >                
+        </div>
+        <div id="s_style" class="hide">
+            <div class="st_hasil">
+                <span id="st_hasil">Select Works !</span><br/>
+            </div>
+            <input type="text" id="src_work" placeholder="Search for work..">
+            <ul id="ul_style" class="myUL">
+            </ul>
+            <br/>
+            <input id="toBarber" type="button" class="button" value="PREV">
+            <input id="toForm" type="button" class="button" width="100%" value="NEXT" >
+        </div>
+        <div id="s_isian" class="hide">
+            <span>Please fill this form below to complete your hiring !</span>
+            <br/>
+            <label>
+                <br/>
+                <input type="text" name="address" placeholder="Address" id="address" required>
+            </label>
+            <label>
+                <br/>
+                <input type="number" name="phone" placeholder="Phone number" id="phone" required>
+            </label>
+            <div style="text-align:center;">
+                <input type="button" class="button" id="sudah" value="Done">
+            </div>
+        </div>
+        
+    </div>
+    <div id="summary" class="hide">
+        <br/>
+            <h2>Hire Summary</h2>
+        <br/>
+        
+        <div id="sum_order">
+            <div class="sum_img">
+                <div class="barber">
+                    
+                </div>
+                <div class="style">
+                    
+                </div>
+            </div>
+            <table class="sum_text">
+                
+            </table>
+            <center>
+                <br/>
+                <input type="button" class="button" id="proses" value="Proceed">
+            </center>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="icon"><a href="home.html"><img src="img/home.png"/></a></div> 
+        <div class="icon"><a href="order.html"><img src="img/order-sel.png"/></a></div> 
+        <div class="icon"><a href="transaction.html"><img src="img/trans.png"/></a></div> 
+        <div class="icon"><a href="about.html"><img src="img/about.png"/></a></div>
+    </div>
+</div>
+</form>    
+<div id="processing" class="hide">
+    <div class="header">
+		<div class="Logo" align="center">
+			<img src="img/8.png" style="width:150px;height:100px;">
+		</div>
+	</div>
+    
+    <div class="main">
+        <div id="tunggu">
+            <br/>
+            <h2>Processing your Hiring</h2>
+            <br/>
+            <center>
+                <br/>
+                <div class="loader"></div>
+                <br/>
+                <br/>
+                <span>Please wait for worker confirmation ...</span>
+            </center>
+                            <style>
+                                .loader {
+                                  border: 16px solid #f3f3f3;
+                                  border-radius: 50%;
+                                  border-top: 16px solid #d8d8d8;
+                                  width: 80px;
+                                  height: 80px;
+                                  -webkit-animation: spin 2s linear infinite;
+                                  animation: spin 2s linear infinite;
+                                }
+
+                                @-webkit-keyframes spin {
+                                  0% { -webkit-transform: rotate(0deg); }
+                                  100% { -webkit-transform: rotate(360deg); }
+                                }
+
+                                @keyframes spin {
+                                  0% { transform: rotate(0deg); }
+                                  100% { transform: rotate(360deg); }
+                                }
+                            </style>
+        </div>
+        
+        <div id="tolak">
+            <br/>
+            <h2>SORRY</h2>
+            <br/>
+            <img src="img/sad.png" width="70%"></br>
+            <h2>YOUR HIRING HAS BEEN DECLINED</h2>
+        </div>
+        
+        <div id="cukur">
+            <br/>
+            <h2>Worker Confirmed !</h2>
+            <br/>
+            <center>
+                <span>Please wait, your worker is coming to you ...</span>
+                <br/><br/>
+                <div id="b_coming"></div>
+                <br/>
+                <br/>
+                <div>Order bisa dibatalkan setelah : <span id="timer"></span></div><br/>
+                <input type="button" class="button" id="batal" value="Cancel Order" disabled="true">
+            </center>
+        </div>
+        
+        <div id="sedang_cukur">
+            <br/>
+            <h2>Hiring is in progress !</h2>
+            <br/>
+            <center>
+                <br/><br/>
+                <div id="b_pros"></div>
+                <br/>
+                <br/>
+            </center>
+        </div>
+    
+        <div id="rating">
+            <br/>
+            <h2>YOUR WORKER IS FINISHED THE WORK</h2>
+            <br/>
+            <center>
+                <span>Please rate this service ...</span>
+                <br/><br/>
+                <fieldset id="rating_ord" class="rating">
+                    <input class="stars" type="radio" id="star5" name="rating" value="5"/>
+                    <label class="full" for="star5" title="Awesome - 5 stars"></label>
+                    <input class="stars" type="radio" id="star4" name="rating" value="4"/>
+                    <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input class="stars" type="radio" id="star3" name="rating" value="3"/>
+                    <label class="full" for="star3" title="Meh - 3 stars"></label>
+                    <input class="stars" type="radio" id="star2" name="rating" value="2"/>
+                    <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input class="stars" type="radio" id="star1" name="rating" value="1"/>
+                    <label class="full" for="star1" title="Really bad - 1 stars"></label>
+                </fieldset>
+                <br/>
+                <br/>
+                <input type="button" class="button" id="btn_rate" value="SUBMIT">
+            </center>
+        </div>
+    
+    </div>
+    <div class="footer">
+        <div class="icon"><a href="home.html"><img src="img/home.png"/></a></div> 
+        <div class="icon"><a href="order.html"><img src="img/order-sel.png"/></a></div> 
+        <div class="icon"><a href="transaction.html"><img src="img/trans.png"/></a></div> 
+        <div class="icon"><a href="about.html"><img src="img/about.png"/></a></div> 
+    </div>
+</div>
+</body>   
+</html>

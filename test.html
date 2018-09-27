@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Ajax Image Upload Using PHP and jQuery</title>
+<link rel="stylesheet" href="style.css" />
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/script.js"></script>
+</head>
+<body>
+<div class="main">
+<h1>Ajax Image Upload</h1><br/>
+<hr>
+<form id="uploadimage" action="" method="post" enctype="multipart/form-data">
+<div id="selectImage">
+<label>Select Your Image</label><br/>
+<input type="file" name="file" id="file" required />
+<input type="button" value="Upload" id="btn" class="submit" />
+</div>
+</form>
+</div>
+<h4 id='loading' >loading..</h4>
+<div id="message"></div>
+</body>
+</html>
